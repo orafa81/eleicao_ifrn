@@ -4,7 +4,7 @@ FROM python:3.11-slim
 
 # Define o diretório de trabalho dentro do contêiner.
 # Todos os comandos subsequentes serão executados neste diretório.
-WORKDIR /app
+WORKDIR /eleicao
 
 # Copia o arquivo de requisitos para o diretório de trabalho.
 # É uma boa prática copiar apenas este arquivo primeiro para aproveitar o cache do Docker.
@@ -25,4 +25,4 @@ COPY . .
 EXPOSE 8000
 
 # Comando para executar a aplicação quando o contêiner for iniciado.
-CMD ["python", "eleicao.py", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["python3", "-m", "infrastructure.grpc.server", "--host", "0.0.0.0", "--port", "8000"]
