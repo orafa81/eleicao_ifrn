@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package candidato;
+
+service CandidatoService {
+  rpc CreateCandidato (CreateCandidatoRequest) returns (CandidatoResponse);
+  rpc GetCandidato (GetCandidatoRequest) returns (CandidatoResponse);
+}
+
+message CreateCandidatoRequest {
+  string nome = 1;
+  int32 numero = 2;
+  string cargo_id = 3;
+}
+
+message GetCandidatoRequest {
+  string id = 1;
+}
+
+message CandidatoResponse {
+  string id = 1;
+  string nome = 2;
+  int32 numero = 3;
+  string cargo_id = 4;
+}

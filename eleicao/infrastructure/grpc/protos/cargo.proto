@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package cargo;
+
+service CargoService {
+  rpc CreateCargo (CreateCargoRequest) returns (CargoResponse);
+  rpc GetCargo (GetCargoRequest) returns (CargoResponse);
+}
+
+message CreateCargoRequest {
+  string nome = 1;
+  string eleicao_id = 2;
+}
+
+message GetCargoRequest {
+  string id = 1;
+}
+
+message CargoResponse {
+  string id = 1;
+  string nome = 2;
+  string eleicao_id = 3;
+}

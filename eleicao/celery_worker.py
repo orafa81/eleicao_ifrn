@@ -1,0 +1,1 @@
+from app.tasks.eleicao_tasks import app

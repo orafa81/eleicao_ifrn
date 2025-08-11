@@ -1,0 +1,69 @@
+syntax = "proto3";
+
+package eleicao;
+
+service EleicaoService {
+  rpc GetEleicao (EleicaoRequest) returns (EleicaoResponse);
+  rpc CreateEleicao (CreateEleicaoRequest) returns (CreateEleicaoResponse);
+  rpc EditEleicao (EditEleicaoRequest) returns (EditEleicaoResponse);
+  rpc DeleteEleicao (DeleteEleicaoRequest) returns (DeleteEleicaoResponse);
+  rpc ListEleicoes (ListEleicoesRequest) returns (ListEleicoesResponse);
+}
+
+message ListEleicoesRequest {}
+
+message ListEleicoesResponse {
+  repeated EleicaoResponse eleicoes = 1;
+}
+
+message CreateEleicaoRequest {
+  string titulo = 1;
+  string descricao = 2;
+  string data_start = 3;
+  string data_final = 4;
+}
+
+message CreateEleicaoResponse {
+  string id = 1;
+  string titulo = 2;
+  string status = 3;
+}
+
+message EditEleicaoRequest {
+  string id = 1;
+  string titulo = 2;
+  string descricao = 3;
+  string data_start = 4;
+  string data_final = 5;
+  string status = 6;
+}
+
+message EditEleicaoResponse {
+  string id = 1;
+  string titulo = 2;
+  string descricao = 3;
+  string data_start = 4;
+  string data_final = 5;
+  string status = 6;
+}
+
+message DeleteEleicaoRequest {
+  string id = 1;
+}
+
+message DeleteEleicaoResponse {
+  string message = 1;
+}
+
+message EleicaoRequest {
+  string id = 1;
+}
+
+message EleicaoResponse {
+  string id = 1;
+  string titulo = 2;
+  string descricao = 3;
+  string data_start = 4;
+  string data_final = 5;
+  string status = 6;
+}

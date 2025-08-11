@@ -1,0 +1,47 @@
+# Compilados do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ambiente virtual
+.venv/
+venv/
+ENV/
+env/
+.venv*/
+
+# Logs
+*.log
+*.pot
+*.pyc
+
+# Banco de dados local
+*.sqlite3
+*.db
+
+# Arquivos temporários
+tmp/
+temp/
+*.tmp
+
+# Configurações locais e credenciais
+.env
+.env.*
+
+# Diretórios de build
+build/
+dist/
+*.egg-info/
+
+# IDEs e editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Cache do Jupyter Notebook
+.ipynb_checkpoints
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
