@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  eleicao:
+    build: .
+    container_name: eleicao_service
+    restart: always
+    ports:
+      - "50051:50051"
+    depends_on:
+      - redis
+      - postgres
+    environment:
+      DATABASE_URL: "postgresql+psycopg2://eleicao:admin@postgres:5432/eleicao_if"
+  
+  redis:
+    image: redis:7-alpine
+    container_name: redis_eleicao
+    ports:
+      - "6379:6379"
+
+  postgres:
+    image: postgres:latest
+    container_name: db_eleicao
+    environment:
+      POSTGRES_USER: eleicao
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: eleicao_if
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

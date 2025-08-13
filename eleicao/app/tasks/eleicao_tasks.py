@@ -3,7 +3,7 @@ from datetime import datetime
 from app.services.eleicao_service import EleicaoService
 from infrastructure.repositories.eleicao_repository_impl import InMemoryEleicaoRepository
 
-app = Celery("eleicao", broker="redis://localhost:6379/0")
+app = Celery("eleicao", broker="redis://redis:6379/0")
 
 eleicao_repository = InMemoryEleicaoRepository()
 eleicao_service = EleicaoService(eleicao_repository)

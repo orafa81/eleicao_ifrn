@@ -31,7 +31,7 @@ def run():
     with grpc.insecure_channel("localhost:50051") as channel:
         stub = cargo_pb2_grpc.CargoServiceStub(channel)
 
-        eleicao_id = "e96054cd-2c0b-4bf6-bdbe-19571d5bf222"  
+        eleicao_id = "ca45fd09-339f-4a7b-9b7e-cb485ece91a0"  
 
         cargo_id = create_cargo(stub, eleicao_id)
         get_cargo(stub, cargo_id)

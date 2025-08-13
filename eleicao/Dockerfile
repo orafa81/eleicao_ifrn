@@ -22,7 +22,7 @@ COPY . .
 
 # Expõe a porta em que a aplicação será executada.
 # Por exemplo, se sua aplicação Flask/Django roda na porta 5000, você a expõe aqui.
-EXPOSE 8000
+EXPOSE 50051
 
 # Comando para executar a aplicação quando o contêiner for iniciado.
-CMD ["python3", "-m", "infrastructure.grpc.server", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["python3", "-m", "infrastructure.grpc.server", "--host", "0.0.0.0", "--port", "50051"]
